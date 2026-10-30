@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactions — BAM Chemistry Lab</title>
+  <meta name="description" content="Explore 30 verified chemical reactions across 6 categories.">
+  <meta name="theme-color" content="#059669">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo" aria-label="BAM Chemistry Lab">
+        <svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <text x="20" y="98" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold" fill="#d97706">BAM</text>
+          <text x="245" y="98" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-style="italic" fill="#059669">Chem</text>
+          <circle cx="555" cy="88" r="9" fill="#d97706"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Periodic Table</a></li>
+        <li><a href="reactions.html" class="active">Reactions</a></li>
+        <li><a href="#lab">Virtual Lab</a></li>
+        <li><a href="#challenges">Challenges</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="reactions-hero">
+      <h1>Chemical Reactions</h1>
+      <p>30 verified reactions across 6 categories — click a category to explore</p>
+    </section>
+
+    <div class="reactions-stats">
+      <div class="stat-item">
+        <span class="stat-val" id="statTotal">30</span>
+        <span class="stat-label">Total Reactions</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">6</span>
+        <span class="stat-label">Categories</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">✓</span>
+        <span class="stat-label">Verified</span>
+      </div>
+    </div>
+
+    <div class="reactions-controls">
+      <input type="text" id="searchInput" placeholder="Search reactions by equation, product, or name...">
+    </div>
+
+    <div class="reactions-section-label">Filter by category</div>
+    <div class="category-pills" id="categoryPills"></div>
+
+    <div class="reactions-section-label">Filter by difficulty</div>
+    <div class="difficulty-pills" id="difficultyPills"></div>
+
+    <div id="reactionsGrid" class="reactions-grid"></div>
+    <div id="noResults" class="no-results" style="display:none;">
+      <h3>No reactions found</h3>
+      <p>Try changing the filters or search term</p>
+    </div>
+    <div class="reactions-count" id="reactionsCount"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 BAM Studios — BAM Chemistry Lab</p>
+    <p style="margin-top: 6px;">Made with ❤️ in Pakistan</p>
+  </footer>
+
+  <script src="js/reactions.js"></script>
+</body>
+</html>

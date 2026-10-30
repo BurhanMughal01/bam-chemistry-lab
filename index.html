@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,42 +22,36 @@
         </svg>
       </a>
       <ul class="nav-links">
-        <li><a href="#periodic" class="active" data-i18n="nav.periodic_table">Periodic Table</a></li>
-        <li><a href="#reactions" data-i18n="nav.reactions">Reactions</a></li>
-        <li><a href="#lab" data-i18n="nav.lab">Virtual Lab</a></li>
-        <li><a href="#challenges" data-i18n="nav.challenges">Challenges</a></li>
+        <li><a href="index.html" class="active">Periodic Table</a></li>
+        <li><a href="reactions.html">Reactions</a></li>
+        <li><a href="#lab">Virtual Lab</a></li>
+        <li><a href="#challenges">Challenges</a></li>
       </ul>
-      <select id="langSwitcher" class="lang-switcher" aria-label="Language">
-        <option value="en">EN</option>
-        <option value="ur">اردو</option>
-      </select>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <h1 data-i18n="app.title">BAM Chemistry Lab</h1>
-      <p data-i18n="app.tagline">Explore all 118 elements — click any to see details</p>
+      <h1>BAM Chemistry Lab</h1>
+      <p>Explore all 118 elements — click any to see details</p>
     </section>
 
     <section class="periodic-section">
       <div class="periodic-controls">
-        <input type="text" id="searchInput" data-i18n-placeholder="search.placeholder" placeholder="Search element (name, symbol, number)...">
+        <input type="text" id="searchInput" placeholder="Search element (name, symbol, number)...">
         <div class="filter-pills" id="filterPills">
-          <button class="filter-pill active" data-filter="all" data-i18n="filters.all">All</button>
-          <button class="filter-pill" data-filter="metal" data-i18n="filters.metal">Metals</button>
-          <button class="filter-pill" data-filter="nonmetal" data-i18n="filters.nonmetal">Non-metals</button>
-          <button class="filter-pill" data-filter="noble" data-i18n="filters.noble">Noble</button>
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="metal">Metals</button>
+          <button class="filter-pill" data-filter="nonmetal">Non-metals</button>
+          <button class="filter-pill" data-filter="noble">Noble</button>
         </div>
       </div>
 
       <div class="periodic-grid-wrap">
         <div id="periodicGrid" class="periodic-grid" aria-label="Periodic table"></div>
-
-        <div class="f-block-label" data-i18n="fblock.lanthanides">Lanthanides (57–71)</div>
+        <div class="f-block-label">Lanthanides (57–71)</div>
         <div id="lanthanidesGrid" class="f-block-grid" aria-label="Lanthanides"></div>
-
-        <div class="f-block-label" data-i18n="fblock.actinides">Actinides (89–103)</div>
+        <div class="f-block-label">Actinides (89–103)</div>
         <div id="actinidesGrid" class="f-block-grid" aria-label="Actinides"></div>
       </div>
 
@@ -74,11 +68,10 @@
   </div>
 
   <footer class="site-footer">
-    <p data-i18n="footer.copyright">© 2026 BAM Studios — BAM Chemistry Lab</p>
-    <p data-i18n="footer.made_with" style="margin-top: 6px;">Made with ❤️ in Pakistan</p>
+    <p>© 2026 BAM Studios — BAM Chemistry Lab</p>
+    <p style="margin-top: 6px;">Made with ❤️ in Pakistan</p>
   </footer>
 
-  <script src="js/i18n.js"></script>
-  <script src="app-v4.js?v=1"></script>
+  <script src="app-v4.js"></script>
 </body>
 </html>

@@ -1,68 +1,81 @@
 (function () {
   'use strict';
 
-  const CC = {
+  var CC = {
     alkali:'#f87171',alkaline:'#fb923c',transition:'#fbbf24',
     post_transition:'#a3e635',metalloid:'#34d399',nonmetal:'#60a5fa',
     halogen:'#a78bfa',noble:'#f472b6',lanthanide:'#fcd34d',
     actinide:'#fda4af',unknown:'#9ca3af'
   };
-  const CK = ['alkali','alkaline','transition','post_transition','metalloid','nonmetal','halogen','noble','lanthanide','actinide','unknown'];
+  var CK = ['alkali','alkaline','transition','post_transition','metalloid','nonmetal','halogen','noble','lanthanide','actinide','unknown'];
 
-  let t = function(k){ return k; };
-  let ALL = [];
+  var EN = {
+    'element.atomic_number': 'Atomic Number',
+    'element.symbol': 'Symbol',
+    'element.mass': 'Atomic Mass',
+    'element.category': 'Category',
+    'element.group': 'Group',
+    'element.period': 'Period',
+    'element.electron_config': 'Electron Configuration',
+    'element.unit_u': 'u',
+    'categories.alkali': 'Alkali Metal',
+    'categories.alkaline': 'Alkaline Earth',
+    'categories.transition': 'Transition Metal',
+    'categories.post_transition': 'Post-Transition',
+    'categories.metalloid': 'Metalloid',
+    'categories.nonmetal': 'Non-metal',
+    'categories.halogen': 'Halogen',
+    'categories.noble': 'Noble Gas',
+    'categories.lanthanide': 'Lanthanide',
+    'categories.actinide': 'Actinide',
+    'categories.unknown': 'Unknown'
+  };
+
+  function t(k) { return EN[k] || k; }
+
+  var ALL = [];
 
   function fail(msg) {
-    console.error('[BAM v4]', msg);
-    const g = document.getElementById('periodicGrid');
+    console.error('[BAM]', msg);
+    var g = document.getElementById('periodicGrid');
     if (g) g.innerHTML = '<div style="color:#f87171;padding:20px;border:2px solid #f87171;border-radius:8px;background:#1f2937;font-family:monospace;">⚠️ ' + msg + '</div>';
   }
 
   function boot() {
-    console.log('[BAM v4] boot');
-
-    // i18n optional, timeout 3s
-    const i18nPromise = window.BAMi18n
-      ? Promise.race([
-          window.BAMi18n.init().then(function(){ t = window.BAMi18n.t; console.log('[BAM v4] i18n ok'); }),
-          new Promise(function(r){ setTimeout(r, 3000); })
-        ]).catch(function(e){ console.warn('[BAM v4] i18n fail (ignoring):', e); })
-      : Promise.resolve();
-
-    i18nPromise.then(function () {
-      return fetch('data/elements.json?nocache=' + Date.now());
-    }).then(function (r) {
-      console.log('[BAM v4] fetch:', r.status);
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
-    }).then(function (data) {
-      ALL = data;
-      console.log('[BAM v4] elements:', ALL.length);
-      render();
-      console.log('[BAM v4] ✅ done');
-    }).catch(function (err) {
-      fail('Failed: ' + err.message);
-    });
+    console.log('[BAM] boot');
+    fetch('data/elements.json?nocache=' + Date.now())
+      .then(function (r) {
+        console.log('[BAM] fetch:', r.status);
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        ALL = data;
+        console.log('[BAM] elements:', ALL.length);
+        render();
+        console.log('[BAM] ✅ done');
+      })
+      .catch(function (err) { fail('Failed: ' + err.message); });
   }
 
   function render() {
-    const grid = document.getElementById('periodicGrid');
+    var grid = document.getElementById('periodicGrid');
     if (!grid) { fail('#periodicGrid missing'); return; }
     grid.innerHTML = '';
 
-    let n = 0;
+    var n = 0;
     ALL.filter(function(el){ return el.category !== 'lanthanide' && el.category !== 'actinide'; })
        .forEach(function(el){
          if (!el.group || !el.period) return;
-         const c = card(el);
+         var c = card(el);
          c.style.gridColumn = el.group;
          c.style.gridRow = el.period;
          grid.appendChild(c);
          n++;
        });
-    console.log('[BAM v4] main rendered:', n);
+    console.log('[BAM] main rendered:', n);
 
-    const la = document.createElement('button');
+    var la = document.createElement('button');
     la.className = 'element-card f-block-jump';
     la.style.gridColumn = 3; la.style.gridRow = 6;
     la.style.setProperty('--cat-color', CC.lanthanide);
@@ -70,7 +83,7 @@
     la.addEventListener('click', function(){ jump('lanthanides'); });
     grid.appendChild(la);
 
-    const ac = document.createElement('button');
+    var ac = document.createElement('button');
     ac.className = 'element-card f-block-jump';
     ac.style.gridColumn = 3; ac.style.gridRow = 7;
     ac.style.setProperty('--cat-color', CC.actinide);
@@ -78,8 +91,8 @@
     ac.addEventListener('click', function(){ jump('actinides'); });
     grid.appendChild(ac);
 
-    const laGrid = document.getElementById('lanthanidesGrid');
-    const acGrid = document.getElementById('actinidesGrid');
+    var laGrid = document.getElementById('lanthanidesGrid');
+    var acGrid = document.getElementById('actinidesGrid');
     if (laGrid) { laGrid.innerHTML = ''; ALL.filter(function(e){return e.category==='lanthanide';}).forEach(function(e){ laGrid.appendChild(card(e)); }); }
     if (acGrid) { acGrid.innerHTML = ''; ALL.filter(function(e){return e.category==='actinide';}).forEach(function(e){ acGrid.appendChild(card(e)); }); }
 
@@ -90,7 +103,7 @@
   }
 
   function card(el) {
-    const c = document.createElement('button');
+    var c = document.createElement('button');
     c.className = 'element-card';
     c.style.setProperty('--cat-color', CC[el.category] || CC.unknown);
     c.dataset.z = el.z;
@@ -103,7 +116,7 @@
   }
 
   function show(el) {
-    const m = document.getElementById('elementModal');
+    var m = document.getElementById('elementModal');
     if (!m) return;
     document.getElementById('modalTitle').textContent = el.name + ' (' + el.symbol + ')';
     document.getElementById('modalBody').innerHTML =
@@ -120,7 +133,7 @@
   }
 
   function attachModal() {
-    const m = document.getElementById('elementModal');
+    var m = document.getElementById('elementModal');
     if (!m) return;
     m.addEventListener('click', function(e){
       if (e.target === m || e.target.classList.contains('modal-close')) m.classList.remove('modal-open');
@@ -129,13 +142,13 @@
   }
 
   function attachSearch() {
-    const i = document.getElementById('searchInput');
+    var i = document.getElementById('searchInput');
     if (!i) return;
     i.addEventListener('input', function(){
-      const q = i.value.toLowerCase().trim();
+      var q = i.value.toLowerCase().trim();
       document.querySelectorAll('.element-card[data-z]').forEach(function(c){
         if (!q) { c.classList.remove('dimmed'); return; }
-        const ok = c.dataset.name.indexOf(q) > -1 || c.dataset.symbol.indexOf(q) > -1 || c.dataset.z === q;
+        var ok = c.dataset.name.indexOf(q) > -1 || c.dataset.symbol.indexOf(q) > -1 || c.dataset.z === q;
         c.classList.toggle('dimmed', !ok);
       });
     });
@@ -146,11 +159,11 @@
       p.addEventListener('click', function(){
         document.querySelectorAll('.filter-pill').forEach(function(x){ x.classList.remove('active'); });
         p.classList.add('active');
-        const f = p.dataset.filter;
+        var f = p.dataset.filter;
         document.querySelectorAll('.element-card[data-z]').forEach(function(c){
           if (f === 'all') { c.classList.remove('dimmed'); return; }
-          const cat = c.dataset.category;
-          let s;
+          var cat = c.dataset.category;
+          var s;
           if (f === 'metal') s = ['alkali','alkaline','transition','post_transition','lanthanide','actinide'].indexOf(cat) > -1;
           else if (f === 'nonmetal') s = ['nonmetal','halogen','metalloid'].indexOf(cat) > -1;
           else if (f === 'noble') s = cat === 'noble';
@@ -162,7 +175,7 @@
   }
 
   function renderLegend() {
-    const l = document.getElementById('legend');
+    var l = document.getElementById('legend');
     if (!l) return;
     l.innerHTML = CK.map(function(k){
       return '<div class="legend-item"><span class="legend-swatch" style="background:' + CC[k] + ';"></span><span>' + t('categories.' + k) + '</span></div>';
@@ -170,8 +183,8 @@
   }
 
   function jump(block) {
-    const id = block === 'lanthanides' ? 'lanthanidesGrid' : 'actinidesGrid';
-    const el = document.getElementById(id);
+    var id = block === 'lanthanides' ? 'lanthanidesGrid' : 'actinidesGrid';
+    var el = document.getElementById(id);
     if (!el) return;
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     el.querySelectorAll('.element-card').forEach(function(c){
