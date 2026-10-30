@@ -1,0 +1,502 @@
+[
+  {
+    "id": "combustion_methane",
+    "category": "combustion",
+    "reactants": [
+      {"formula": "CH4", "coefficient": 1, "name": "Methane"},
+      {"formula": "O2", "coefficient": 2, "name": "Oxygen"}
+    ],
+    "products": [
+      {"formula": "CO2", "coefficient": 1, "name": "Carbon dioxide"},
+      {"formula": "H2O", "coefficient": 2, "name": "Water"}
+    ],
+    "equation": "CH4 + 2O2 → CO2 + 2H2O",
+    "delta_h": -890.4,
+    "description": "Combustion of methane — releases a lot of heat",
+    "difficulty": "basic",
+    "hazard": "Flammable"
+  },
+  {
+    "id": "combustion_ethanol",
+    "category": "combustion",
+    "reactants": [
+      {"formula": "C2H5OH", "coefficient": 1, "name": "Ethanol"},
+      {"formula": "O2", "coefficient": 3, "name": "Oxygen"}
+    ],
+    "products": [
+      {"formula": "CO2", "coefficient": 2, "name": "Carbon dioxide"},
+      {"formula": "H2O", "coefficient": 3, "name": "Water"}
+    ],
+    "equation": "C2H5OH + 3O2 → 2CO2 + 3H2O",
+    "delta_h": -1366.8,
+    "description": "Combustion of ethanol — common in biofuels",
+    "difficulty": "basic",
+    "hazard": "Flammable"
+  },
+  {
+    "id": "combustion_propane",
+    "category": "combustion",
+    "reactants": [
+      {"formula": "C3H8", "coefficient": 1, "name": "Propane"},
+      {"formula": "O2", "coefficient": 5, "name": "Oxygen"}
+    ],
+    "products": [
+      {"formula": "CO2", "coefficient": 3, "name": "Carbon dioxide"},
+      {"formula": "H2O", "coefficient": 4, "name": "Water"}
+    ],
+    "equation": "C3H8 + 5O2 → 3CO2 + 4H2O",
+    "delta_h": -2219.2,
+    "description": "Combustion of propane — used in LPG",
+    "difficulty": "basic",
+    "hazard": "Flammable"
+  },
+  {
+    "id": "combustion_octane",
+    "category": "combustion",
+    "reactants": [
+      {"formula": "C8H18", "coefficient": 2, "name": "Octane"},
+      {"formula": "O2", "coefficient": 25, "name": "Oxygen"}
+    ],
+    "products": [
+      {"formula": "CO2", "coefficient": 16, "name": "Carbon dioxide"},
+      {"formula": "H2O", "coefficient": 18, "name": "Water"}
+    ],
+    "equation": "2C8H18 + 25O2 → 16CO2 + 18H2O",
+    "delta_h": -10900,
+    "description": "Combustion of octane — main component of petrol",
+    "difficulty": "intermediate",
+    "hazard": "Flammable"
+  },
+  {
+    "id": "combustion_hydrogen",
+    "category": "combustion",
+    "reactants": [
+      {"formula": "H2", "coefficient": 2, "name": "Hydrogen"},
+      {"formula": "O2", "coefficient": 1, "name": "Oxygen"}
+    ],
+    "products": [
+      {"formula": "H2O", "coefficient": 2, "name": "Water"}
+    ],
+    "equation": "2H2 + O2 → 2H2O",
+    "delta_h": -571.6,
+    "description": "Combustion of hydrogen — only water as product (clean fuel)",
+    "difficulty": "basic",
+    "hazard": "Explosive"
+  },
+  {
+    "id": "synthesis_water",
+    "category": "synthesis",
+    "reactants": [
+      {"formula": "H2", "coefficient": 2, "name": "Hydrogen"},
+      {"formula": "O2", "coefficient": 1, "name": "Oxygen"}
+    ],
+    "products": [
+      {"formula": "H2O", "coefficient": 2, "name": "Water"}
+    ],
+    "equation": "2H2 + O2 → 2H2O",
+    "delta_h": -571.6,
+    "description": "Synthesis of water from elements",
+    "difficulty": "basic",
+    "hazard": null
+  },
+  {
+    "id": "synthesis_ammonia",
+    "category": "synthesis",
+    "reactants": [
+      {"formula": "N2", "coefficient": 1, "name": "Nitrogen"},
+      {"formula": "H2", "coefficient": 3, "name": "Hydrogen"}
+    ],
+    "products": [
+      {"formula": "NH3", "coefficient": 2, "name": "Ammonia"}
+    ],
+    "equation": "N2 + 3H2 → 2NH3",
+    "delta_h": -92.4,
+    "description": "Haber process — ammonia synthesis for fertilizers",
+    "difficulty": "intermediate",
+    "hazard": "High pressure required"
+  },
+  {
+    "id": "synthesis_hcl",
+    "category": "synthesis",
+    "reactants": [
+      {"formula": "H2", "coefficient": 1, "name": "Hydrogen"},
+      {"formula": "Cl2", "coefficient": 1, "name": "Chlorine"}
+    ],
+    "products": [
+      {"formula": "HCl", "coefficient": 2, "name": "Hydrogen chloride"}
+    ],
+    "equation": "H2 + Cl2 → 2HCl",
+    "delta_h": -184.6,
+    "description": "Synthesis of hydrogen chloride — used in acid production",
+    "difficulty": "basic",
+    "hazard": "Toxic gas"
+  },
+  {
+    "id": "synthesis_co2",
+    "category": "synthesis",
+    "reactants": [
+      {"formula": "C", "coefficient": 1, "name": "Carbon"},
+      {"formula": "O2", "coefficient": 1, "name": "Oxygen"}
+    ],
+    "products": [
+      {"formula": "CO2", "coefficient": 1, "name": "Carbon dioxide"}
+    ],
+    "equation": "C + O2 → CO2",
+    "delta_h": -393.5,
+    "description": "Burning carbon in oxygen",
+    "difficulty": "basic",
+    "hazard": null
+  },
+  {
+    "id": "synthesis_nacl",
+    "category": "synthesis",
+    "reactants": [
+      {"formula": "Na", "coefficient": 2, "name": "Sodium"},
+      {"formula": "Cl2", "coefficient": 1, "name": "Chlorine"}
+    ],
+    "products": [
+      {"formula": "NaCl", "coefficient": 2, "name": "Sodium chloride"}
+    ],
+    "equation": "2Na + Cl2 → 2NaCl",
+    "delta_h": -822.2,
+    "description": "Synthesis of table salt from elements — vigorous reaction",
+    "difficulty": "basic",
+    "hazard": "Vigorous, highly exothermic"
+  },
+  {
+    "id": "decomposition_water",
+    "category": "decomposition",
+    "reactants": [
+      {"formula": "H2O", "coefficient": 2, "name": "Water"}
+    ],
+    "products": [
+      {"formula": "H2", "coefficient": 2, "name": "Hydrogen"},
+      {"formula": "O2", "coefficient": 1, "name": "Oxygen"}
+    ],
+    "equation": "2H2O → 2H2 + O2",
+    "delta_h": 571.6,
+    "description": "Electrolysis of water — requires electricity",
+    "difficulty": "intermediate",
+    "hazard": null
+  },
+  {
+    "id": "decomposition_h2o2",
+    "category": "decomposition",
+    "reactants": [
+      {"formula": "H2O2", "coefficient": 2, "name": "Hydrogen peroxide"}
+    ],
+    "products": [
+      {"formula": "H2O", "coefficient": 2, "name": "Water"},
+      {"formula": "O2", "coefficient": 1, "name": "Oxygen"}
+    ],
+    "equation": "2H2O2 → 2H2O + O2",
+    "delta_h": -196.1,
+    "description": "Decomposition of hydrogen peroxide (catalyzed by MnO2)",
+    "difficulty": "basic",
+    "hazard": "Concentrated H2O2 is corrosive"
+  },
+  {
+    "id": "decomposition_caco3",
+    "category": "decomposition",
+    "reactants": [
+      {"formula": "CaCO3", "coefficient": 1, "name": "Calcium carbonate"}
+    ],
+    "products": [
+      {"formula": "CaO", "coefficient": 1, "name": "Calcium oxide"},
+      {"formula": "CO2", "coefficient": 1, "name": "Carbon dioxide"}
+    ],
+    "equation": "CaCO3 → CaO + CO2",
+    "delta_h": 178.3,
+    "description": "Thermal decomposition of limestone — requires high heat",
+    "difficulty": "intermediate",
+    "hazard": "High temperature (~900°C)"
+  },
+  {
+    "id": "decomposition_kclo3",
+    "category": "decomposition",
+    "reactants": [
+      {"formula": "KClO3", "coefficient": 2, "name": "Potassium chlorate"}
+    ],
+    "products": [
+      {"formula": "KCl", "coefficient": 2, "name": "Potassium chloride"},
+      {"formula": "O2", "coefficient": 3, "name": "Oxygen"}
+    ],
+    "equation": "2KClO3 → 2KCl + 3O2",
+    "delta_h": -89.4,
+    "description": "Thermal decomposition with MnO2 catalyst — common O2 source in labs",
+    "difficulty": "intermediate",
+    "hazard": "Strong oxidizer"
+  },
+  {
+    "id": "decomposition_nahco3",
+    "category": "decomposition",
+    "reactants": [
+      {"formula": "NaHCO3", "coefficient": 2, "name": "Sodium bicarbonate"}
+    ],
+    "products": [
+      {"formula": "Na2CO3", "coefficient": 1, "name": "Sodium carbonate"},
+      {"formula": "H2O", "coefficient": 1, "name": "Water"},
+      {"formula": "CO2", "coefficient": 1, "name": "Carbon dioxide"}
+    ],
+    "equation": "2NaHCO3 → Na2CO3 + H2O + CO2",
+    "delta_h": 129.3,
+    "description": "Baking soda decomposition — used in baking",
+    "difficulty": "basic",
+    "hazard": null
+  },
+  {
+    "id": "acidbase_hcl_naoh",
+    "category": "acid-base",
+    "reactants": [
+      {"formula": "HCl", "coefficient": 1, "name": "Hydrochloric acid"},
+      {"formula": "NaOH", "coefficient": 1, "name": "Sodium hydroxide"}
+    ],
+    "products": [
+      {"formula": "NaCl", "coefficient": 1, "name": "Sodium chloride"},
+      {"formula": "H2O", "coefficient": 1, "name": "Water"}
+    ],
+    "equation": "HCl + NaOH → NaCl + H2O",
+    "delta_h": -57.3,
+    "description": "Strong acid + strong base — neutralization",
+    "difficulty": "basic",
+    "hazard": "Both reactants are corrosive"
+  },
+  {
+    "id": "acidbase_h2so4_koh",
+    "category": "acid-base",
+    "reactants": [
+      {"formula": "H2SO4", "coefficient": 1, "name": "Sulfuric acid"},
+      {"formula": "KOH", "coefficient": 2, "name": "Potassium hydroxide"}
+    ],
+    "products": [
+      {"formula": "K2SO4", "coefficient": 1, "name": "Potassium sulfate"},
+      {"formula": "H2O", "coefficient": 2, "name": "Water"}
+    ],
+    "equation": "H2SO4 + 2KOH → K2SO4 + 2H2O",
+    "delta_h": -114.6,
+    "description": "Diprotic acid neutralization",
+    "difficulty": "intermediate",
+    "hazard": "H2SO4 is highly corrosive"
+  },
+  {
+    "id": "acidbase_hno3_nh3",
+    "category": "acid-base",
+    "reactants": [
+      {"formula": "HNO3", "coefficient": 1, "name": "Nitric acid"},
+      {"formula": "NH3", "coefficient": 1, "name": "Ammonia"}
+    ],
+    "products": [
+      {"formula": "NH4NO3", "coefficient": 1, "name": "Ammonium nitrate"}
+    ],
+    "equation": "HNO3 + NH3 → NH4NO3",
+    "delta_h": -51.5,
+    "description": "Acid + base forming ammonium nitrate (fertilizer)",
+    "difficulty": "intermediate",
+    "hazard": "Ammonium nitrate can explode under extreme conditions"
+  },
+  {
+    "id": "acidbase_hcl_nahco3",
+    "category": "acid-base",
+    "reactants": [
+      {"formula": "HCl", "coefficient": 1, "name": "Hydrochloric acid"},
+      {"formula": "NaHCO3", "coefficient": 1, "name": "Sodium bicarbonate"}
+    ],
+    "products": [
+      {"formula": "NaCl", "coefficient": 1, "name": "Sodium chloride"},
+      {"formula": "H2O", "coefficient": 1, "name": "Water"},
+      {"formula": "CO2", "coefficient": 1, "name": "Carbon dioxide"}
+    ],
+    "equation": "HCl + NaHCO3 → NaCl + H2O + CO2",
+    "delta_h": -17.5,
+    "description": "Acid + carbonate — fizzing reaction, CO2 gas released",
+    "difficulty": "basic",
+    "hazard": null
+  },
+  {
+    "id": "acidbase_ch3cooh_naoh",
+    "category": "acid-base",
+    "reactants": [
+      {"formula": "CH3COOH", "coefficient": 1, "name": "Acetic acid"},
+      {"formula": "NaOH", "coefficient": 1, "name": "Sodium hydroxide"}
+    ],
+    "products": [
+      {"formula": "CH3COONa", "coefficient": 1, "name": "Sodium acetate"},
+      {"formula": "H2O", "coefficient": 1, "name": "Water"}
+    ],
+    "equation": "CH3COOH + NaOH → CH3COONa + H2O",
+    "delta_h": -55.8,
+    "description": "Weak acid + strong base — soap making principle",
+    "difficulty": "intermediate",
+    "hazard": null
+  },
+  {
+    "id": "precip_agno3_nacl",
+    "category": "precipitation",
+    "reactants": [
+      {"formula": "AgNO3", "coefficient": 1, "name": "Silver nitrate"},
+      {"formula": "NaCl", "coefficient": 1, "name": "Sodium chloride"}
+    ],
+    "products": [
+      {"formula": "AgCl", "coefficient": 1, "name": "Silver chloride"},
+      {"formula": "NaNO3", "coefficient": 1, "name": "Sodium nitrate"}
+    ],
+    "equation": "AgNO3 + NaCl → AgCl ↓ + NaNO3",
+    "delta_h": -65.5,
+    "description": "White precipitate of AgCl — classic halide test",
+    "difficulty": "basic",
+    "hazard": "AgNO3 stains skin black"
+  },
+  {
+    "id": "precip_bacl2_na2so4",
+    "category": "precipitation",
+    "reactants": [
+      {"formula": "BaCl2", "coefficient": 1, "name": "Barium chloride"},
+      {"formula": "Na2SO4", "coefficient": 1, "name": "Sodium sulfate"}
+    ],
+    "products": [
+      {"formula": "BaSO4", "coefficient": 1, "name": "Barium sulfate"},
+      {"formula": "NaCl", "coefficient": 2, "name": "Sodium chloride"}
+    ],
+    "equation": "BaCl2 + Na2SO4 → BaSO4 ↓ + 2NaCl",
+    "delta_h": -47.3,
+    "description": "White precipitate of BaSO4 — used in sulfate test",
+    "difficulty": "basic",
+    "hazard": "Barium salts are toxic"
+  },
+  {
+    "id": "precip_pbno3_ki",
+    "category": "precipitation",
+    "reactants": [
+      {"formula": "Pb(NO3)2", "coefficient": 1, "name": "Lead(II) nitrate"},
+      {"formula": "KI", "coefficient": 2, "name": "Potassium iodide"}
+    ],
+    "products": [
+      {"formula": "PbI2", "coefficient": 1, "name": "Lead(II) iodide"},
+      {"formula": "KNO3", "coefficient": 2, "name": "Potassium nitrate"}
+    ],
+    "equation": "Pb(NO3)2 + 2KI → PbI2 ↓ + 2KNO3",
+    "delta_h": -69.4,
+    "description": "Golden yellow precipitate of PbI2 — beautiful reaction",
+    "difficulty": "basic",
+    "hazard": "Lead compounds are toxic"
+  },
+  {
+    "id": "precip_cacl2_na2co3",
+    "category": "precipitation",
+    "reactants": [
+      {"formula": "CaCl2", "coefficient": 1, "name": "Calcium chloride"},
+      {"formula": "Na2CO3", "coefficient": 1, "name": "Sodium carbonate"}
+    ],
+    "products": [
+      {"formula": "CaCO3", "coefficient": 1, "name": "Calcium carbonate"},
+      {"formula": "NaCl", "coefficient": 2, "name": "Sodium chloride"}
+    ],
+    "equation": "CaCl2 + Na2CO3 → CaCO3 ↓ + 2NaCl",
+    "delta_h": -52.6,
+    "description": "White precipitate of CaCO3 — limestone formation",
+    "difficulty": "basic",
+    "hazard": null
+  },
+  {
+    "id": "precip_cuso4_naoh",
+    "category": "precipitation",
+    "reactants": [
+      {"formula": "CuSO4", "coefficient": 1, "name": "Copper(II) sulfate"},
+      {"formula": "NaOH", "coefficient": 2, "name": "Sodium hydroxide"}
+    ],
+    "products": [
+      {"formula": "Cu(OH)2", "coefficient": 1, "name": "Copper(II) hydroxide"},
+      {"formula": "Na2SO4", "coefficient": 1, "name": "Sodium sulfate"}
+    ],
+    "equation": "CuSO4 + 2NaOH → Cu(OH)2 ↓ + Na2SO4",
+    "delta_h": -78.2,
+    "description": "Blue precipitate of Cu(OH)2",
+    "difficulty": "basic",
+    "hazard": null
+  },
+  {
+    "id": "disp_zn_cuso4",
+    "category": "displacement",
+    "reactants": [
+      {"formula": "Zn", "coefficient": 1, "name": "Zinc"},
+      {"formula": "CuSO4", "coefficient": 1, "name": "Copper(II) sulfate"}
+    ],
+    "products": [
+      {"formula": "ZnSO4", "coefficient": 1, "name": "Zinc sulfate"},
+      {"formula": "Cu", "coefficient": 1, "name": "Copper"}
+    ],
+    "equation": "Zn + CuSO4 → ZnSO4 + Cu",
+    "delta_h": -217.0,
+    "description": "Zinc displaces copper — blue solution fades, copper deposits",
+    "difficulty": "basic",
+    "hazard": null
+  },
+  {
+    "id": "disp_fe_cuso4",
+    "category": "displacement",
+    "reactants": [
+      {"formula": "Fe", "coefficient": 1, "name": "Iron"},
+      {"formula": "CuSO4", "coefficient": 1, "name": "Copper(II) sulfate"}
+    ],
+    "products": [
+      {"formula": "FeSO4", "coefficient": 1, "name": "Iron(II) sulfate"},
+      {"formula": "Cu", "coefficient": 1, "name": "Copper"}
+    ],
+    "equation": "Fe + CuSO4 → FeSO4 + Cu",
+    "delta_h": -149.0,
+    "description": "Iron nail in copper sulfate — classic displacement demo",
+    "difficulty": "basic",
+    "hazard": null
+  },
+  {
+    "id": "disp_mg_hcl",
+    "category": "displacement",
+    "reactants": [
+      {"formula": "Mg", "coefficient": 1, "name": "Magnesium"},
+      {"formula": "HCl", "coefficient": 2, "name": "Hydrochloric acid"}
+    ],
+    "products": [
+      {"formula": "MgCl2", "coefficient": 1, "name": "Magnesium chloride"},
+      {"formula": "H2", "coefficient": 1, "name": "Hydrogen"}
+    ],
+    "equation": "Mg + 2HCl → MgCl2 + H2 ↑",
+    "delta_h": -462.0,
+    "description": "Magnesium in acid — hydrogen gas bubbles",
+    "difficulty": "basic",
+    "hazard": "Hydrogen gas is flammable"
+  },
+  {
+    "id": "disp_cl2_nabr",
+    "category": "displacement",
+    "reactants": [
+      {"formula": "Cl2", "coefficient": 1, "name": "Chlorine"},
+      {"formula": "NaBr", "coefficient": 2, "name": "Sodium bromide"}
+    ],
+    "products": [
+      {"formula": "NaCl", "coefficient": 2, "name": "Sodium chloride"},
+      {"formula": "Br2", "coefficient": 1, "name": "Bromine"}
+    ],
+    "equation": "Cl2 + 2NaBr → 2NaCl + Br2",
+    "delta_h": -103.0,
+    "description": "Chlorine displaces bromine — halogen reactivity trend",
+    "difficulty": "intermediate",
+    "hazard": "Cl2 and Br2 are toxic"
+  },
+  {
+    "id": "disp_al_hcl",
+    "category": "displacement",
+    "reactants": [
+      {"formula": "Al", "coefficient": 2, "name": "Aluminium"},
+      {"formula": "HCl", "coefficient": 6, "name": "Hydrochloric acid"}
+    ],
+    "products": [
+      {"formula": "AlCl3", "coefficient": 2, "name": "Aluminium chloride"},
+      {"formula": "H2", "coefficient": 3, "name": "Hydrogen"}
+    ],
+    "equation": "2Al + 6HCl → 2AlCl3 + 3H2 ↑",
+    "delta_h": -1050.0,
+    "description": "Aluminium in acid — hydrogen gas released",
+    "difficulty": "intermediate",
+    "hazard": "Hydrogen gas is flammable"
+  }
+]
